@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -11,20 +11,7 @@ app.use(cors({
 }))
 app.use(express.json())
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS.replace(/\s/g, ''),
-  },
-})
-
-// Verify SMTP connection on startup
-transporter.verify()
-  .then(() => console.log('SMTP connection verified - ready to send emails'))
-  .catch((err) => console.error('SMTP connection failed:', err.message))
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
@@ -46,8 +33,8 @@ app.post('/api/contact', async (req, res) => {
   `
 
   try {
-    await transporter.sendMail({
-      from: `"Séjour Maroc" <${process.env.SMTP_USER}>`,
+    await resend.emails.send({
+      from: 'Séjour Maroc <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Nouvelle demande: ${name} - ${destination}`,
@@ -56,8 +43,7 @@ app.post('/api/contact', async (req, res) => {
 
     res.json({ success: true, message: 'Email sent successfully' })
   } catch (error) {
-    console.error('Email error:', error.message)
-    console.error('Full error:', error)
+    console.error('Email error:', error)
     res.status(500).json({ error: 'Failed to send email', detail: error.message })
   }
 })
@@ -83,8 +69,8 @@ app.post('/api/booking', async (req, res) => {
   `
 
   try {
-    await transporter.sendMail({
-      from: `"Séjour Maroc" <${process.env.SMTP_USER}>`,
+    await resend.emails.send({
+      from: 'Séjour Maroc <onboarding@resend.dev>',
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Réservation: ${name} - ${destination} (${date})`,
@@ -93,8 +79,7 @@ app.post('/api/booking', async (req, res) => {
 
     res.json({ success: true, message: 'Booking email sent successfully' })
   } catch (error) {
-    console.error('Email error:', error.message)
-    console.error('Full error:', error)
+    console.error('Email error:', error)
     res.status(500).json({ error: 'Failed to send email', detail: error.message })
   }
 })
