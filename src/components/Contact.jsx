@@ -66,7 +66,7 @@ function Contact() {
                 <Mail size={20} />
                 <div>
                   <span className="contact__detail-label">{t.contact.email}</span>
-                  <span className="contact__detail-value">hafida.boumeshoul0@gmail.com</span>
+                  <span className="contact__detail-value">hafida.boumeshoul@gmail.com</span>
                 </div>
               </div>
               <div className="contact__detail">

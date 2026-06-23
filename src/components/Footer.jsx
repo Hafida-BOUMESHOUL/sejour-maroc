@@ -55,7 +55,7 @@ function Footer() {
             <h4 className="footer__heading">{t.footer.contact}</h4>
             <ul className="footer__links">
               <li><span className="footer__link">+212 6 99 11 40 70</span></li>
-              <li><span className="footer__link">hafida.boumeshoul0@gmail.com</span></li>
+              <li><span className="footer__link">hafida.boumeshoul@gmail.com</span></li>
               <li><span className="footer__link">Marrakech, Maroc</span></li>
             </ul>
           </div>
