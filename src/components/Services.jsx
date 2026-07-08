@@ -1,4 +1,5 @@
-import { Compass, Users, Star, Shield, Car, Camera } from 'lucide-react'
+import { useState } from 'react'
+import { Compass, Users, Star, Shield, Car, Camera, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Services.css'
 
@@ -13,6 +14,22 @@ const icons = [
 
 function Services() {
   const { t } = useLanguage()
+  const [startIndex, setStartIndex] = useState(0)
+  const cardsPerView = 3
+
+  const items = t.services.items
+  const canGoBack = startIndex > 0
+  const canGoForward = startIndex + cardsPerView < items.length
+
+  const handlePrev = () => {
+    if (canGoBack) setStartIndex(Math.max(0, startIndex - cardsPerView))
+  }
+
+  const handleNext = () => {
+    if (canGoForward) setStartIndex(Math.min(items.length - cardsPerView, startIndex + cardsPerView))
+  }
+
+  const visibleItems = items.slice(startIndex, startIndex + cardsPerView)
 
   return (
     <section className="services section" id="services">
@@ -23,13 +40,41 @@ function Services() {
             {t.services.subtitle}
           </p>
         </div>
-        <div className="services__grid">
-          {t.services.items.map((service, i) => (
-            <div className="service-card" key={i}>
-              <div className="service-card__icon">{icons[i]}</div>
-              <h3 className="service-card__title">{service.title}</h3>
-              <p className="service-card__desc">{service.desc}</p>
-            </div>
+        <div className="services__carousel">
+          <button
+            className="carousel-arrow carousel-arrow--left"
+            onClick={handlePrev}
+            disabled={!canGoBack}
+            aria-label="Previous services"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <div className="services__grid">
+            {visibleItems.map((service, i) => (
+              <div className="service-card" key={startIndex + i}>
+                <div className="service-card__icon">{icons[startIndex + i]}</div>
+                <h3 className="service-card__title">{service.title}</h3>
+                <p className="service-card__desc">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+          <button
+            className="carousel-arrow carousel-arrow--right"
+            onClick={handleNext}
+            disabled={!canGoForward}
+            aria-label="Next services"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
+        <div className="carousel-dots">
+          {Array.from({ length: Math.ceil(items.length / cardsPerView) }).map((_, i) => (
+            <button
+              key={i}
+              className={`carousel-dot ${i === Math.floor(startIndex / cardsPerView) ? 'carousel-dot--active' : ''}`}
+              onClick={() => setStartIndex(i * cardsPerView)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
           ))}
         </div>
       </div>

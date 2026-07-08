@@ -9,7 +9,8 @@ import './TripDetail.css'
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
 function TripDetail({ destination, onBack }) {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
+  const localized = destination.i18n[lang] || destination.i18n.fr
   const [form, setForm] = useState({
     name: '', email: '', phone: '', travelers: '', date: '',
   })
@@ -58,11 +59,11 @@ function TripDetail({ destination, onBack }) {
         ></div>
         <div className="trip-detail__hero-overlay"></div>
         <div className="trip-detail__hero-content">
-          <span className="trip-detail__tag">{destination.tag}</span>
+          <span className="trip-detail__tag">{localized.tag}</span>
           <h1 className="trip-detail__title">{destination.title}</h1>
           <div className="trip-detail__meta">
             <span className="trip-detail__meta-item">
-              <Clock size={16} />{destination.duration}
+              <Clock size={16} />{localized.duration}
             </span>
             <span className="trip-detail__meta-item">
               <MapPin size={16} />Maroc
@@ -74,7 +75,7 @@ function TripDetail({ destination, onBack }) {
       <div className="trip-detail__body">
         <div className="trip-detail__main">
           <h2>{t.trip.overview}</h2>
-          <p className="trip-detail__overview">{destination.overview}</p>
+          <p className="trip-detail__overview">{localized.overview}</p>
 
           <div className="trip-detail__inc-exc">
             <div className="trip-detail__list-section">
@@ -83,7 +84,7 @@ function TripDetail({ destination, onBack }) {
                 {t.trip.included}
               </h3>
               <div className="trip-detail__list">
-                {destination.included.map((item) => (
+                {localized.included.map((item) => (
                   <div key={item} className="trip-detail__list-item trip-detail__list-item--included">
                     <CheckCircle size={14} /><span>{item}</span>
                   </div>
@@ -96,7 +97,7 @@ function TripDetail({ destination, onBack }) {
                 {t.trip.excluded}
               </h3>
               <div className="trip-detail__list">
-                {destination.excluded.map((item) => (
+                {localized.excluded.map((item) => (
                   <div key={item} className="trip-detail__list-item trip-detail__list-item--excluded">
                     <X size={14} /><span>{item}</span>
                   </div>
@@ -108,7 +109,7 @@ function TripDetail({ destination, onBack }) {
           <h2>{t.trip.itinerary}</h2>
           <div className="trip-detail__itinerary">
             <div className="trip-detail__timeline">
-              {destination.itinerary.map((step, index) => (
+              {localized.itinerary.map((step, index) => (
                 <div key={index} className="trip-detail__timeline-item">
                   <div className="trip-detail__timeline-dot"></div>
                   <span className="trip-detail__timeline-time">{step.time}</span>

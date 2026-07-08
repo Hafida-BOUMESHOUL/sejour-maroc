@@ -38,7 +38,7 @@ const translations = {
     about: {
       label: 'Qui Sommes-Nous',
       title: 'Votre Partenaire pour Découvrir le Maroc',
-      desc1: 'Séjour Maroc est une agence locale basée à Marrakech, fondée par des passionnés du voyage et de la culture marocaine. Nous créons des expériences authentiques et sur mesure pour les voyageurs du monde entier.',
+      desc1: 'Golden Morocco Voyage est une agence locale basée à Marrakech, fondée par des passionnés du voyage et de la culture marocaine. Nous créons des expériences authentiques et sur mesure pour les voyageurs du monde entier.',
       desc2: 'Notre équipe de guides locaux expérimentés vous accompagne à travers les villes impériales, les dunes du Sahara, les sommets de l\'Atlas et les côtes atlantiques, avec une attention particulière portée à chaque détail.',
       highlights: [
         '+500 voyageurs accompagnés chaque année',
@@ -54,7 +54,7 @@ const translations = {
       items: [
         { name: 'Sophie Martin', location: 'Paris, France', text: 'Un voyage extraordinaire ! L\'organisation était parfaite du début à la fin. Notre guide était passionné et nous a fait découvrir le vrai Maroc.' },
         { name: 'James Wilson', location: 'London, UK', text: 'The desert camp experience was magical. Sleeping under the stars in the Sahara is something I\'ll never forget. Highly recommend!' },
-        { name: 'Marie Dubois', location: 'Bruxelles, Belgique', text: 'Troisième fois que nous réservons avec Séjour Maroc. Toujours aussi professionnel et attentionné. Les riads étaient splendides.' },
+        { name: 'Marie Dubois', location: 'Bruxelles, Belgique', text: 'Troisième fois que nous réservons avec Golden Morocco Voyage. Toujours aussi professionnel et attentionné. Les riads étaient splendides.' },
       ],
     },
     contact: {
@@ -83,7 +83,7 @@ const translations = {
       destinations: 'Destinations',
       links: 'Liens Utiles',
       contact: 'Contact',
-      copyright: '© 2026 Séjour Maroc. Tous droits réservés.',
+      copyright: '© 2026 Golden Morocco Voyage. Tous droits réservés.',
       madeIn: 'Conçu avec ❤️ au Maroc',
     },
     trip: {
@@ -116,6 +116,8 @@ const translations = {
       { value: 'chefchaouen', label: 'Chefchaouen' },
       { value: 'essaouira', label: 'Essaouira' },
       { value: 'atlas', label: 'Atlas & Ouarzazate' },
+      { value: 'casablanca', label: 'Casablanca' },
+      { value: 'rabat', label: 'Rabat' },
       { value: 'circuit', label: 'Circuit Complet' },
     ],
   },
@@ -158,7 +160,7 @@ const translations = {
     about: {
       label: 'About Us',
       title: 'Your Partner to Discover Morocco',
-      desc1: 'Séjour Maroc is a local agency based in Marrakech, founded by travel and Moroccan culture enthusiasts. We create authentic, tailor-made experiences for travelers from around the world.',
+      desc1: 'Golden Morocco Voyage is a local agency based in Marrakech, founded by travel and Moroccan culture enthusiasts. We create authentic, tailor-made experiences for travelers from around the world.',
       desc2: 'Our team of experienced local guides accompanies you through imperial cities, Sahara dunes, Atlas peaks and Atlantic coasts, with special attention to every detail.',
       highlights: [
         '500+ travelers guided every year',
@@ -174,7 +176,7 @@ const translations = {
       items: [
         { name: 'Sophie Martin', location: 'Paris, France', text: 'An extraordinary trip! The organization was perfect from start to finish. Our guide was passionate and showed us the real Morocco.' },
         { name: 'James Wilson', location: 'London, UK', text: 'The desert camp experience was magical. Sleeping under the stars in the Sahara is something I\'ll never forget. Highly recommend!' },
-        { name: 'Marie Dubois', location: 'Brussels, Belgium', text: 'Third time booking with Séjour Maroc. Always professional and attentive. The riads were splendid.' },
+        { name: 'Marie Dubois', location: 'Brussels, Belgium', text: 'Third time booking with Golden Morocco Voyage. Always professional and attentive. The riads were splendid.' },
       ],
     },
     contact: {
@@ -203,7 +205,7 @@ const translations = {
       destinations: 'Destinations',
       links: 'Useful Links',
       contact: 'Contact',
-      copyright: '© 2026 Séjour Maroc. All rights reserved.',
+      copyright: '© 2026 Golden Morocco Voyage. All rights reserved.',
       madeIn: 'Made with ❤️ in Morocco',
     },
     trip: {
@@ -236,6 +238,8 @@ const translations = {
       { value: 'chefchaouen', label: 'Chefchaouen' },
       { value: 'essaouira', label: 'Essaouira' },
       { value: 'atlas', label: 'Atlas & Ouarzazate' },
+      { value: 'casablanca', label: 'Casablanca' },
+      { value: 'rabat', label: 'Rabat' },
       { value: 'circuit', label: 'Full Circuit' },
     ],
   },
@@ -278,7 +282,7 @@ const translations = {
     about: {
       label: 'Quiénes Somos',
       title: 'Tu Socio para Descubrir Marruecos',
-      desc1: 'Séjour Maroc es una agencia local con sede en Marrakech, fundada por apasionados del viaje y la cultura marroquí. Creamos experiencias auténticas y a medida para viajeros de todo el mundo.',
+      desc1: 'Golden Morocco Voyage es una agencia local con sede en Marrakech, fundada por apasionados del viaje y la cultura marroquí. Creamos experiencias auténticas y a medida para viajeros de todo el mundo.',
       desc2: 'Nuestro equipo de guías locales experimentados te acompaña por las ciudades imperiales, las dunas del Sahara, las cumbres del Atlas y las costas atlánticas, con especial atención a cada detalle.',
       highlights: [
         '+500 viajeros acompañados cada año',
@@ -294,7 +298,7 @@ const translations = {
       items: [
         { name: 'Sophie Martin', location: 'París, Francia', text: '¡Un viaje extraordinario! La organización fue perfecta de principio a fin. Nuestro guía era apasionado y nos mostró el verdadero Marruecos.' },
         { name: 'James Wilson', location: 'Londres, UK', text: 'La experiencia del campamento en el desierto fue mágica. Dormir bajo las estrellas en el Sahara es algo que nunca olvidaré. ¡Muy recomendable!' },
-        { name: 'Marie Dubois', location: 'Bruselas, Bélgica', text: 'Tercera vez que reservamos con Séjour Maroc. Siempre profesional y atento. Los riads eran espléndidos.' },
+        { name: 'Marie Dubois', location: 'Bruselas, Bélgica', text: 'Tercera vez que reservamos con Golden Morocco Voyage. Siempre profesional y atento. Los riads eran espléndidos.' },
       ],
     },
     contact: {
@@ -323,7 +327,7 @@ const translations = {
       destinations: 'Destinos',
       links: 'Enlaces Útiles',
       contact: 'Contacto',
-      copyright: '© 2026 Séjour Maroc. Todos los derechos reservados.',
+      copyright: '© 2026 Golden Morocco Voyage. Todos los derechos reservados.',
       madeIn: 'Hecho con ❤️ en Marruecos',
     },
     trip: {
@@ -356,6 +360,8 @@ const translations = {
       { value: 'chefchaouen', label: 'Chefchaouen' },
       { value: 'essaouira', label: 'Essaouira' },
       { value: 'atlas', label: 'Atlas y Ouarzazate' },
+      { value: 'casablanca', label: 'Casablanca' },
+      { value: 'rabat', label: 'Rabat' },
       { value: 'circuit', label: 'Circuito Completo' },
     ],
   },

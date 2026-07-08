@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, MapPin, Globe } from 'lucide-react'
+import { Menu, X, Globe } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import logo from '../assets/logo.jpeg'
+import logoDark from '../assets/logo_dark_mode.jpeg'
 import './Navbar.css'
 
 const languages = [
@@ -36,8 +38,12 @@ function Navbar() {
     <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container container">
         <a href="#accueil" className="navbar__brand">
-          <MapPin size={24} className="navbar__brand-icon" />
-          <span>Séjour Maroc</span>
+          <img
+            src={isScrolled ? logoDark : logo}
+            alt="Golden Morocco Voyage"
+            className="navbar__brand-logo"
+          />
+          <span>Golden Morocco Voyage</span>
         </a>
 
         <ul className={`navbar__links ${isMobileOpen ? 'navbar__links--open' : ''}`}>

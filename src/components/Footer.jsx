@@ -1,5 +1,6 @@
-import { MapPin, Globe, Camera, MessageCircle } from 'lucide-react'
+import { Globe, Camera, MessageCircle } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import logoDark from '../assets/logo_dark_mode.jpeg'
 import './Footer.css'
 
 function Footer() {
@@ -11,8 +12,8 @@ function Footer() {
         <div className="footer__grid">
           <div className="footer__about">
             <div className="footer__brand">
-              <MapPin size={20} />
-              Séjour Maroc
+              <img src={logoDark} alt="Golden Morocco Voyage" className="footer__brand-logo" />
+              Golden Morocco Voyage
             </div>
             <p className="footer__desc">{t.footer.desc}</p>
             <div className="footer__social">
@@ -37,6 +38,8 @@ function Footer() {
               <li><a href="#destinations" className="footer__link">Fès</a></li>
               <li><a href="#destinations" className="footer__link">Essaouira</a></li>
               <li><a href="#destinations" className="footer__link">Atlas</a></li>
+              <li><a href="#destinations" className="footer__link">Casablanca</a></li>
+              <li><a href="#destinations" className="footer__link">Rabat</a></li>
             </ul>
           </div>
 
@@ -54,8 +57,8 @@ function Footer() {
           <div>
             <h4 className="footer__heading">{t.footer.contact}</h4>
             <ul className="footer__links">
-              <li><span className="footer__link">+212 6 99 11 40 70</span></li>
-              <li><span className="footer__link">hafida.boumeshoul@gmail.com</span></li>
+              <li><span className="footer__link">+212 661 248 503</span></li>
+              <li><span className="footer__link">contact@goldenmoroccovoyage.com</span></li>
               <li><span className="footer__link">Marrakech, Maroc</span></li>
             </ul>
           </div>

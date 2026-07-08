@@ -7,19 +7,25 @@
   margin-bottom: 3rem;
 }
 
+.destinations__carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .destinations__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  flex: 1;
 }
 
 .destination-card {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 380px;
+  height: 420px;
   cursor: pointer;
-  group: true;
 }
 
 .destination-card__image {
@@ -78,3 +84,70 @@
   transform: translateY(0);
 }
 
+/* Carousel arrows */
+.carousel-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-dark);
+  transition: var(--transition);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Carousel dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gray-200);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carousel-dot--active {
+  background: var(--color-primary);
+  transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+  .destinations__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .destinations__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+}

@@ -22,7 +22,7 @@ app.post('/api/contact', async (req, res) => {
   }
 
   const htmlContent = `
-    <h2>Nouvelle demande de contact - Séjour Maroc</h2>
+    <h2>Nouvelle demande de contact - Golden Morocco Voyage</h2>
     <table style="border-collapse:collapse;width:100%;max-width:600px;">
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Nom</td><td style="padding:8px;border:1px solid #ddd;">${name}</td></tr>
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;">${email}</td></tr>
@@ -34,7 +34,7 @@ app.post('/api/contact', async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: 'Séjour Maroc <onboarding@resend.dev>',
+      from: 'Golden Morocco Voyage <contact@goldenmoroccovoyage.com>',
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Nouvelle demande: ${name} - ${destination}`,
@@ -57,7 +57,7 @@ app.post('/api/booking', async (req, res) => {
   }
 
   const htmlContent = `
-    <h2>Nouvelle réservation - Séjour Maroc</h2>
+    <h2>Nouvelle réservation - Golden Morocco Voyage</h2>
     <table style="border-collapse:collapse;width:100%;max-width:600px;">
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Nom</td><td style="padding:8px;border:1px solid #ddd;">${name}</td></tr>
       <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;">${email}</td></tr>
@@ -70,7 +70,7 @@ app.post('/api/booking', async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: 'Séjour Maroc <onboarding@resend.dev>',
+      from: 'Golden Morocco Voyage <contact@goldenmoroccovoyage.com>',
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Réservation: ${name} - ${destination} (${date})`,
