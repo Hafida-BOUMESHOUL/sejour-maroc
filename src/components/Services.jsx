@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Compass, Users, Star, Shield, Car, Camera, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Services.css'
@@ -12,12 +12,31 @@ const icons = [
   <Camera size={28} />,
 ]
 
+function useCardsPerView() {
+  const getCount = () => window.innerWidth <= 576 ? 1 : window.innerWidth <= 992 ? 2 : 3
+  const [count, setCount] = useState(getCount)
+  useEffect(() => {
+    const handleResize = () => setCount(getCount())
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  return count
+}
+
 function Services() {
   const { t } = useLanguage()
   const [startIndex, setStartIndex] = useState(0)
-  const cardsPerView = 3
+  const cardsPerView = useCardsPerView()
 
   const items = t.services.items
+
+  // Reset startIndex if it goes out of bounds on resize
+  useEffect(() => {
+    if (startIndex + cardsPerView > items.length) {
+      setStartIndex(Math.max(0, items.length - cardsPerView))
+    }
+  }, [cardsPerView, items.length, startIndex])
+
   const canGoBack = startIndex > 0
   const canGoForward = startIndex + cardsPerView < items.length
 

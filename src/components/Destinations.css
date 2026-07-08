@@ -146,6 +146,10 @@
     grid-template-columns: 1fr;
   }
 
+  .destination-card {
+    height: 350px;
+  }
+
   .carousel-arrow {
     width: 36px;
     height: 36px;

@@ -1,12 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Destinations.css'
 
+function useCardsPerView() {
+  const getCount = () => window.innerWidth <= 576 ? 1 : window.innerWidth <= 992 ? 2 : 3
+  const [count, setCount] = useState(getCount)
+  useEffect(() => {
+    const handleResize = () => setCount(getCount())
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+  return count
+}
+
 function Destinations({ destinations, onDestinationClick }) {
   const { t, lang } = useLanguage()
   const [startIndex, setStartIndex] = useState(0)
-  const cardsPerView = 3
+  const cardsPerView = useCardsPerView()
+
+  // Reset startIndex if it goes out of bounds on resize
+  useEffect(() => {
+    if (startIndex + cardsPerView > destinations.length) {
+      setStartIndex(Math.max(0, destinations.length - cardsPerView))
+    }
+  }, [cardsPerView, destinations.length, startIndex])
 
   const canGoBack = startIndex > 0
   const canGoForward = startIndex + cardsPerView < destinations.length
