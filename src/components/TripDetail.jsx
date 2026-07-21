@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   ArrowLeft, Clock, MapPin,
   Check, X, CheckCircle, Send, Loader,
@@ -8,8 +9,9 @@ import './TripDetail.css'
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
-function TripDetail({ destination, onBack }) {
+function TripDetail({ destination }) {
   const { t, lang } = useLanguage()
+  const navigate = useNavigate()
   const localized = destination.i18n[lang] || destination.i18n.fr
   const [form, setForm] = useState({
     name: '', email: '', phone: '', travelers: '', date: '',
@@ -48,7 +50,7 @@ function TripDetail({ destination, onBack }) {
 
   return (
     <div className="trip-detail">
-      <button className="trip-detail__back" onClick={onBack} aria-label="Back">
+      <button className="trip-detail__back" onClick={() => navigate('/')} aria-label="Back">
         <ArrowLeft size={20} />
       </button>
 

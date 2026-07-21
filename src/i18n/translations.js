@@ -3,6 +3,7 @@ const translations = {
     nav: {
       home: 'Accueil',
       destinations: 'Destinations',
+      circuits: 'Circuits',
       services: 'Services',
       about: 'À Propos',
       testimonials: 'Témoignages',
@@ -22,6 +23,25 @@ const translations = {
     destinations: {
       title: 'Nos Destinations',
       subtitle: 'Du désert à l\'océan, explorez les trésors du Maroc avec nos circuits guidés',
+    },
+    circuits: {
+      title: 'Nos Circuits',
+      subtitle: 'Des circuits multi-jours pour explorer le Maroc en profondeur',
+    },
+    customCircuit: {
+      title: 'Créez Votre Circuit',
+      subtitle: 'Sélectionnez les villes que vous souhaitez visiter et nous créerons un circuit sur mesure',
+      selectCities: 'Sélectionnez vos villes',
+      yourRoute: 'Votre itinéraire',
+      formName: 'Nom complet',
+      formNamePh: 'Votre nom',
+      formEmail: 'Email',
+      formDays: 'Nombre de jours',
+      formTravelers: 'Nombre de voyageurs',
+      formMessage: 'Message (optionnel)',
+      formMessagePh: 'Précisez vos préférences...',
+      submit: 'Envoyer ma demande',
+      successMsg: 'Merci ! Nous vous contacterons sous 24h avec votre circuit personnalisé.',
     },
     services: {
       title: 'Ce Que Nous Offrons',
@@ -125,6 +145,7 @@ const translations = {
     nav: {
       home: 'Home',
       destinations: 'Destinations',
+      circuits: 'Circuits',
       services: 'Services',
       about: 'About',
       testimonials: 'Testimonials',
@@ -144,6 +165,25 @@ const translations = {
     destinations: {
       title: 'Our Destinations',
       subtitle: 'From desert to ocean, explore Morocco\'s treasures with our guided tours',
+    },
+    circuits: {
+      title: 'Our Circuits',
+      subtitle: 'Multi-day circuits to explore Morocco in depth',
+    },
+    customCircuit: {
+      title: 'Build Your Own Circuit',
+      subtitle: 'Select the cities you want to visit and we\'ll create a tailor-made circuit for you',
+      selectCities: 'Select your cities',
+      yourRoute: 'Your itinerary',
+      formName: 'Full name',
+      formNamePh: 'Your name',
+      formEmail: 'Email',
+      formDays: 'Number of days',
+      formTravelers: 'Number of travelers',
+      formMessage: 'Message (optional)',
+      formMessagePh: 'Tell us your preferences...',
+      submit: 'Send my request',
+      successMsg: 'Thank you! We\'ll contact you within 24h with your custom circuit.',
     },
     services: {
       title: 'What We Offer',
@@ -247,6 +287,7 @@ const translations = {
     nav: {
       home: 'Inicio',
       destinations: 'Destinos',
+      circuits: 'Circuitos',
       services: 'Servicios',
       about: 'Nosotros',
       testimonials: 'Testimonios',
@@ -266,6 +307,25 @@ const translations = {
     destinations: {
       title: 'Nuestros Destinos',
       subtitle: 'Del desierto al océano, explora los tesoros de Marruecos con nuestros circuitos guiados',
+    },
+    circuits: {
+      title: 'Nuestros Circuitos',
+      subtitle: 'Circuitos de varios días para explorar Marruecos en profundidad',
+    },
+    customCircuit: {
+      title: 'Crea Tu Propio Circuito',
+      subtitle: 'Selecciona las ciudades que deseas visitar y crearemos un circuito a tu medida',
+      selectCities: 'Selecciona tus ciudades',
+      yourRoute: 'Tu itinerario',
+      formName: 'Nombre completo',
+      formNamePh: 'Tu nombre',
+      formEmail: 'Email',
+      formDays: 'Número de días',
+      formTravelers: 'Número de viajeros',
+      formMessage: 'Mensaje (opcional)',
+      formMessagePh: 'Indica tus preferencias...',
+      submit: 'Enviar mi solicitud',
+      successMsg: '¡Gracias! Te contactaremos en 24h con tu circuito personalizado.',
     },
     services: {
       title: 'Lo Que Ofrecemos',

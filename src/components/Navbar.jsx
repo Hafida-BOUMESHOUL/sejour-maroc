@@ -28,6 +28,7 @@ function Navbar() {
   const navLinks = [
     { label: t.nav.home, href: '#accueil' },
     { label: t.nav.destinations, href: '#destinations' },
+    { label: t.nav.circuits || 'Circuits', href: '#circuits' },
     { label: t.nav.services, href: '#services' },
     { label: t.nav.about, href: '#apropos' },
     { label: t.nav.testimonials, href: '#temoignages' },

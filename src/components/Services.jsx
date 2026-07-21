@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Compass, Users, Star, Shield, Car, Camera, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import { useCardsPerView } from '../hooks/useCardsPerView'
 import './Services.css'
 
 const icons = [
@@ -11,17 +12,6 @@ const icons = [
   <Car size={28} />,
   <Camera size={28} />,
 ]
-
-function useCardsPerView() {
-  const getCount = () => window.innerWidth <= 576 ? 1 : window.innerWidth <= 992 ? 2 : 3
-  const [count, setCount] = useState(getCount)
-  useEffect(() => {
-    const handleResize = () => setCount(getCount())
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-  return count
-}
 
 function Services() {
   const { t } = useLanguage()

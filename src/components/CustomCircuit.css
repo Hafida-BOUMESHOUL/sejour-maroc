@@ -1,0 +1,88 @@
+.custom-circuit {
+  background: var(--color-light);
+}
+
+.custom-circuit__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.custom-circuit__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.custom-circuit__cities-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-dark);
+}
+
+.custom-circuit__city-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.custom-circuit__tag {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-gray-200);
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.custom-circuit__tag:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.custom-circuit__tag--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.custom-circuit__route {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  text-align: center;
+}
+
+.custom-circuit__route-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.custom-circuit__route-path {
+  font-size: 0.95rem;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.custom-circuit__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem auto 0;
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+}

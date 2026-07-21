@@ -1,20 +1,10 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
+import { useCardsPerView } from '../hooks/useCardsPerView'
 import './Destinations.css'
 
-function useCardsPerView() {
-  const getCount = () => window.innerWidth <= 576 ? 1 : window.innerWidth <= 992 ? 2 : 3
-  const [count, setCount] = useState(getCount)
-  useEffect(() => {
-    const handleResize = () => setCount(getCount())
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-  return count
-}
-
-function Destinations({ destinations, onDestinationClick }) {
+function Destinations({ destinations, onDestinationClick, isCircuits }) {
   const { t, lang } = useLanguage()
   const [startIndex, setStartIndex] = useState(0)
   const cardsPerView = useCardsPerView()
@@ -40,12 +30,12 @@ function Destinations({ destinations, onDestinationClick }) {
   const visibleDestinations = destinations.slice(startIndex, startIndex + cardsPerView)
 
   return (
-    <section className="destinations section" id="destinations">
+    <section className="destinations section" id={isCircuits ? 'circuits' : 'destinations'}>
       <div className="container">
         <div className="destinations__header">
-          <h2 className="section-title">{t.destinations.title}</h2>
+          <h2 className="section-title">{isCircuits ? (t.circuits?.title || 'Nos Circuits') : t.destinations.title}</h2>
           <p className="section-subtitle" style={{ margin: '0.5rem auto 0' }}>
-            {t.destinations.subtitle}
+            {isCircuits ? (t.circuits?.subtitle || 'Des circuits multi-jours pour explorer le Maroc en profondeur') : t.destinations.subtitle}
           </p>
         </div>
         <div className="destinations__carousel">

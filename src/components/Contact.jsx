@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Send, Phone, Mail, MapPin, Loader } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Contact.css'
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
-function Contact() {
+function Contact({ customRoute }) {
   const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
@@ -14,6 +14,16 @@ function Contact() {
     travelers: '',
     message: '',
   })
+
+  useEffect(() => {
+    if (customRoute) {
+      setFormData((prev) => ({
+        ...prev,
+        destination: 'circuit',
+        message: `Circuit personnalisé : ${customRoute}`,
+      }))
+    }
+  }, [customRoute])
   const [sending, setSending] = useState(false)
   const [status, setStatus] = useState(null)
 
